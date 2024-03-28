@@ -1,0 +1,2 @@
+choice=$(echo -e "1\n2" | dmenu -l 2 -p "Choose script: ")
+sudo bash ~/.local/bin/fixwifi/unfuck_wifi$choice

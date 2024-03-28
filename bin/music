@@ -1,0 +1,2 @@
+song=$(ls /home/duje/music | dmenu -i -l 20 -p "Choose song")
+mpv --loop=inf --no-video "/home/duje/music/$song"

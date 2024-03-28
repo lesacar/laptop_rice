@@ -1,0 +1,16 @@
+#!/bin/bash
+set -x
+
+export PCI_SLOT='0000:00:14.3'
+export NIC_NAME='wlan0'
+
+# "/etc/init.d/net.${NIC_NAME}" stop
+
+sleep 2; rmmod iwlmvm iwlwifi
+
+sleep 2; echo 1 > "/sys/bus/pci/devices/${PCI_SLOT}/remove"
+sleep 2; echo 1 > '/sys/bus/pci/rescan'
+
+sleep 2; modprobe iwlmvm iwlwifi
+
+# sleep 2; "/etc/init.d/net.${NIC_NAME}" start
