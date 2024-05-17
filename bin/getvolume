@@ -1,2 +1,0 @@
-dunstctl close-all
-notify-send $(amixer -c 0 get Master | grep dB | head -1 | awk -F"[][]" '{print $2}') -t 1000

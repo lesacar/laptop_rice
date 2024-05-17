@@ -1,1 +1,0 @@
-sudo systemctl stop tlp && notify-send "perf" && exit

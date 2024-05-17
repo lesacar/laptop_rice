@@ -1,4 +1,0 @@
-#!/bin/bash
-
-val=$(dmenu -p 'Set color temp to: ' < /dev/null)
-redshift -P -O $val
