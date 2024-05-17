@@ -23,18 +23,9 @@ echo -e "User verification complete\n\nThis process might take a while"
 optional="pcmanfm"
 
 sudo pacman -S wmname scrot libnotify ttf-liberation $optional base-devel ttf-font-awesome libx11 libxft dunst picom libxinerama freetype2 fontconfig xwallpaper xorg-server xorg-xinit xorg-xrandr base-devel ttf-jetbrains-mono-nerd --noconfirm || echo "Something went wrong with pacman"
-mkdir -v suckless_deps
-cd suckless_deps
-git clone https://git.suckless.org/dmenu
-git clone https://github.com/Tharre/st-transparency
 
-cd dmenu
 make -j$(nproc) && sudo make clean install || echo -e "\n\n\n\n\ndmenu failed to compile\n\n\n\n\n" && exit
 cd ..
-
-cd suckless_deps/st-transparency
-make -j$(nproc) && sudo make clean install || echo -e "\n\n\n\n\nst failed to compile\n\n\n\n\n" && exit
-cd $git_path
 
 cd dwmblocks
 make -j$(nproc) && sudo make clean install || echo -e "\n\n\n\n\ndwmblocks failed to compile\n\n\n\n\n" && exit
